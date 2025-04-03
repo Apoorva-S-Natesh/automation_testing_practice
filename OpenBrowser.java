@@ -13,6 +13,10 @@ public class OpenBrowser {
 		System.out.println(driver.getCurrentUrl());
 		System.out.println(driver.getWindowHandle());
 		System.out.println(driver.getTitle());
-		//driver.close();
+		driver.manage().window().minimize();
+		System.out.println(driver.getPageSource());
+		System.out.println("Window Size: " +driver.manage().window().getSize());
+		//driver.close(); // Closes only the current tab, not the whole window or session
+		driver.quit(); //-close all browser windows and terminates webDriver Session
 		}
 }
