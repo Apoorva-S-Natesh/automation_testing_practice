@@ -26,18 +26,22 @@ public class MultipleTabsExample {
 		//print and click on each link
 		System.out.println("Hyperlink Text: " + pinterestLink.getText());
 		pinterestLink.click();
+		System.out.println(driver.getWindowHandle()); //will return main handle
 		Thread.sleep(1000);
 		
 		System.out.println("Hyperlin Text: " + twitterLink.getText());
 		twitterLink.click();
+		System.out.println(driver.getWindowHandle());
 		Thread.sleep(1000);
 		
 		System.out.println("Hyperlin Text: " + linkedinLink.getText());
 		linkedinLink.click();
+		System.out.println(driver.getWindowHandle());
 		Thread.sleep(1000);
 		
 		System.out.println("Hyperlin Text: " + googleLink.getText());
 		googleLink.click();
+		System.out.println(driver.getWindowHandle());
 		Thread.sleep(1000);
 		
 		System.out.println("Hyperlin Text: " + facebookLink.getText());
@@ -48,7 +52,7 @@ public class MultipleTabsExample {
 		Set<String> allWindowHandles = driver.getWindowHandles();
 		System.out.println("Number of Open Windows/Tabs " +allWindowHandles.size());
 		System.out.println("All WIndow Handles: " + allWindowHandles);
-		
+
 		driver.quit();
 	}
 }
