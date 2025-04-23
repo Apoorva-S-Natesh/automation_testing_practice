@@ -35,7 +35,7 @@ Instead of this :
 
 Do This:
 <methods>
-	<include name="regression_*" />
+	<include name="regression_.*" />
 </methods>
 
 Can execute all the test cases from an entire package
