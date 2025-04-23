@@ -5,7 +5,7 @@
     <classes>
       <class name="testng.tutorial.LoginTests">
       	<methods>
-      		<exclude name="testBlankEMailPassword" />
+      		<exclude name="^test.*"/> <!-- “exclude anything that starts with test”: ^test.* -->
       	</methods>
       </class>
       <class name="testng.tutorial.CartTests">
@@ -13,11 +13,37 @@
       		<include name="testCartRetainsProductsAfterLogout" />
       	</methods>
       </class>
-      <class name="testng.tutorial.CheckoutTests">
-      <methods>
-      	<include name="testcheckoutWithExpiredCard" />
-      </methods>
-      </class>
+      <class name="testng.tutorial.CheckoutTests"/>
     </classes>
   </test> <!-- SmokeTest -->
 </suite> <!-- e-commerce -->
+
+<!-- RUN AS TestNG Suite  -->
+
+<!-- 
+Using regular expression in TestNG for Dynamic Test Execution
+use of wildcards(*)
+Example: In a userTests class there are a mix of testCases some belonging to Regression TEsting and some to smoke testing
+Client Request: Run only the regression test cases for this release
+Solution: Use Regular Expressions in <include> 
+Instead of this :
+<methods>
+	<include name="regression_ValidUserLogin/>
+	<include name="regression_InalidUserLogin/>
+	<include name="regression_UpdateProfile/>
+</methods>
+
+Do This:
+<methods>
+	<include name="regression_*" />
+</methods>
+
+Can execute all the test cases from an entire package
+<suite name="Suite">
+	<test name="Test">
+		<packages>
+			<package name="testng.tutorial" />
+		</packages>
+	</test>
+</suite>
+ -->
