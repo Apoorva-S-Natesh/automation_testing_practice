@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="e-commerce">
+  <test thread-count="5" name="SmokeTest">
+    <classes>
+      <class name="testng.tutorial.LoginTests">
+      	<methods>
+      		<exclude name="testBlankEMailPassword" />
+      	</methods>
+      </class>
+      <class name="testng.tutorial.CartTests">
+      	<methods>
+      		<include name="testCartRetainsProductsAfterLogout" />
+      	</methods>
+      </class>
+      <class name="testng.tutorial.CheckoutTests">
+      <methods>
+      	<include name="testcheckoutWithExpiredCard" />
+      </methods>
+      </class>
+    </classes>
+  </test> <!-- SmokeTest -->
+</suite> <!-- e-commerce -->
