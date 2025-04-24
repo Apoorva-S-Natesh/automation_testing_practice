@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="e-commerce">
+  <test thread-count="5" name="SmokeTest">
+    <classes>
+      <class name="testng.tutorial.CheckoutTests"/>
+      <class name="testng.tutorial.CartTests" />
+      <class name="testng.tutorial.LoginTests" />
+    </classes>
+  </test> <!-- SmokeTest -->
+</suite> <!-- e-commerce -->
+
+<!-- RUN AS TestNG Suite  -->
+
+<!-- 
+Even though the checkout tests are before logintest class which contains the before test, 
+the BeforeTest is executed and then the logintests. The AfterTest is in the checkout class 
+but will still be executed at the end after all the test. Since they are all in the same folder
+
+OUTPUT
+
+Initializing WebDriver and setting up test prerequisites -@BeforeTst
+Validate that a user is able to succesfully complete checkout using a credit card.
+Validate that a user is able to succesfully complete checkout using UPI.
+Validate that a user is able to select 'Cash on Delivery' as a payment option.
+Validate that the system correctly displays an error message when an expired card is used for checkout.
+Validate that the user can successfully apply a avalid discount code at checkout
+Validate that a registered user is able to increase the quantity of a product in the cart.
+Validate that a registered user is able to decrease the quantity of a product in the cart.
+Validate that user gets is able to remove a product from the cart
+Validate that cart retains products even after the user logs out and logs in again.
+Validate that cart correctly displays the total amount for all added products.
+Validate that a registered user is able to login with correct credentials.
+Validate that an unregistered user gets the correct error message when trying to login in.
+Validate that user gets the correct error message when entering invalid email ID.
+Validate that user gets the correct error message when entering the wrong password.
+Validate that user gets the correct error message when both email and password fields are left blank.
+Logging out user and closing browser session -@AfterTest
+ -->
