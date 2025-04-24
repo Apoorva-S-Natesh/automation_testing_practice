@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="e-commerce">
+  <test thread-count="5" name="Testfolder1">
+    <classes>
+      <class name="testng.tutorial.CheckoutTests"/>
+    </classes>
+  </test> <!-- SmokeTest -->
+  
+  <test thread-count="5" name="Testfolder2">
+  	<classes>
+  		<class name="testng.tutorial.CartTests" />
+      	<class name="testng.tutorial.LoginTests" />
+  	</classes>
+  </test>
+</suite> <!-- e-commerce -->
+
+<!-- RUN AS TestNG Suite  -->
+
+<!-- 
+The @BeforeTest and @ AfterTest are executed before and after the test cases in the same folder. 
+In the above case, the CheckoutTests class is in TestFolder1 and hence the @AfteTest is executed after all test of that folder.
+CartTests and LoginTests are in TestFolder2 and hence the @BeforeTest will be executed before all the test cases in that folder.  
+
+OUTPUT
+
+Validate that a user is able to succesfully complete checkout using a credit card.
+Validate that a user is able to succesfully complete checkout using UPI.
+Validate that a user is able to select 'Cash on Delivery' as a payment option.
+Validate that the system correctly displays an error message when an expired card is used for checkout.
+Validate that the user can successfully apply a avalid discount code at checkout
+Logging out user and closing browser session -@AfterTest
+Initializing WebDriver and setting up test prerequisites -@BeforeTst
+Validate that a registered user is able to increase the quantity of a product in the cart.
+Validate that a registered user is able to decrease the quantity of a product in the cart.
+Validate that user gets is able to remove a product from the cart
+Validate that cart retains products even after the user logs out and logs in again.
+Validate that cart correctly displays the total amount for all added products.
+Validate that a registered user is able to login with correct credentials.
+Validate that an unregistered user gets the correct error message when trying to login in.
+Validate that user gets the correct error message when entering invalid email ID.
+Validate that user gets the correct error message when entering the wrong password.
+Validate that user gets the correct error message when both email and password fields are left blank.
+
+ -->
