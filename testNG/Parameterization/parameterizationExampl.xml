@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Learning-App">
+	<parameter name="username" value="Apoo"></parameter>
+	<parameter name="usernameStudent" value="Jay"></parameter>
+	<parameter name="usernameTrainer" value="Anu"></parameter>
+	
+	<parameter name="prodBusinessURl" value="https://production.business.appname.in" />
+	<parameter name="stagingBusinessURL" value="https://staging.business.appname.in" />
+
+	<test name="Test Parameterization">
+		<classes>
+			<class name="parameterization.TestingParameterization"></class>
+		</classes>
+	</test>
+</suite>
