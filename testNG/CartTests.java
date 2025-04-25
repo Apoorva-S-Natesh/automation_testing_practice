@@ -8,12 +8,12 @@ public class CartTests {
 		System.out.println("Validate that a registered user is able to increase the quantity of a product in the cart.");	
 	}
 	
-	@Test(priority = 2)
+	@Test(dependsOnMethods = "testIncreaseProductquantity")
 	public void testDecreaseProductquantity() {
 			System.out.println("Validate that a registered user is able to decrease the quantity of a product in the cart.");
 	}
 	
-	@Test(priority = 3)
+	@Test(dependsOnMethods = {"testIncreaseProductquantity", "testDecreaseProductquantity()"})
 	public void testRemoveProductfromCart() {
 		System.out.println("Validate that user gets is able to remove a product from the cart");
 	}
