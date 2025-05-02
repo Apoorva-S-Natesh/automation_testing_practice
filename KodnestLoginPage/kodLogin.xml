@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="KodNestLogin">
+	<parameter name="invalidEmail" value="aoorva@.com"></parameter>
+	<parameter name="unregisteredEmail" value="apoorva12345@gmail.com"></parameter>
+	<parameter name="registeredEmail" value="apoorva1326@gmail.com"></parameter>
+	<parameter name="randomPassword" value="apoo123"></parameter>
+	<parameter name="wrongPassword" value="apoo123"></parameter>
+	<parameter name="correctPassword" value="Aj@080123"></parameter>
+	
+	<test name="TestLogin">
+		<classes>
+			<class name="kodLoginTest3.KodLoginTest3"></class>
+		</classes>
+	</test>
+</suite>
